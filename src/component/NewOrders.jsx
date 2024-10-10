@@ -4,6 +4,9 @@ import axios from 'axios';
 const NewOrders = () => {
   const [customerData, setCustomerData] = useState([]);
 
+  //https://saroma-foods-backend-1.onrender.com/saarofoods/customerdata
+  //https://saroma-foods-backend-1.onrender.com/saarofoods/download-pdf
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -53,7 +56,7 @@ const NewOrders = () => {
               <th className="py-2 md:py-3 px-3 md:px-6 text-left">Landmark</th>
               <th className="py-2 md:py-3 px-3 md:px-6 text-left">Phone No</th>
               <th className="py-2 md:py-3 px-3 md:px-6 text-center">Address</th>
-              <th className="py-2 md:py-3 px-3 md:px-6 text-left">Date</th>
+              <th className="py-2 md:py-3 px-3 md:px-6 text-left">Date & Time</th>
               <th className="py-2 md:py-3 px-3 md:px-6 text-left">Actions</th>
             </tr>
           </thead>
@@ -64,11 +67,11 @@ const NewOrders = () => {
                   key={index}
                   className="border-b border-gray-200 hover:bg-gray-100 text-xs md:text-sm"
                 >
-                  <td className="py-2 md:py-3 px-3 md:px-6">{customer.name}</td>
+                  <td className="py-2 md:py-3 px-3 md:px-6 ">{customer.name}</td>
                   <td className="py-2 md:py-3 px-3 md:px-6">{customer.landMark}</td>
                   <td className="py-2 md:py-3 px-3 md:px-6">{customer.phoneNo}</td>
                   <td className="py-2 md:py-3 px-3 md:px-6">{customer.address}</td>
-                  <td className="py-2 md:py-3 px-3 md:px-6">{new Date(customer.createdAt).toLocaleDateString()}</td>
+                  <td className="py-2 md:py-3 px-3 md:px-6"> {new Date(customer.createdAt).toLocaleString()}</td>
 
                  
                   <td className="py-2 md:py-3 px-3 md:px-6">

@@ -10,7 +10,7 @@ const NewOrders = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('https://saroma-foods-backend-1.onrender.com/saarofoods/customerdata');
+        const response = await axios.get('https://saroma-foods-backend-2.onrender.com/saarofoods/customerdata');
         setCustomerData(response.data);
       } catch (error) {
         console.log('Customer data is not fetched', error);
@@ -23,7 +23,7 @@ const NewOrders = () => {
   // Function to download PDF for a specific customer
   const downloadPDF = async (customer) => {
     try {
-      const response = await axios.post('https://saroma-foods-backend-1.onrender.com/saarofoods/download-pdf', customer, {
+      const response = await axios.post('https://saroma-foods-backend-2.onrender.com/saarofoods/download-pdf', customer, {
         responseType: 'blob', // Important to handle binary data
       });
 

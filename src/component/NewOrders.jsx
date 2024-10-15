@@ -72,6 +72,7 @@ const NewOrders = () => {
                 <table className="w-full bg-white border border-gray-300 rounded-lg shadow-md mb-6">
                   <thead className="bg-teal-600 text-white">
                     <tr className="text-sm md:text-base">
+                      <th className="py-2 md:py-3 px-3 md:px-6 text-left">Customer Id</th>
                       <th className="py-2 md:py-3 px-3 md:px-6 text-left">Name</th>
                       <th className="py-2 md:py-3 px-3 md:px-6 text-left">Phone No</th>
                       <th className="py-2 md:py-3 px-3 md:px-6 text-center">Address</th>
@@ -80,11 +81,14 @@ const NewOrders = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {customerData[date].map((customer, index) => (
+                    {customerData[date]
+                    .slice() 
+                    .reverse().map((customer, index) => (
                       <tr
                         key={index}
                         className="border-b border-gray-200 hover:bg-gray-100 text-xs md:text-sm"
                       >
+                        <td className="py-2 md:py-3 px-3 md:px-6">{customer.customerId}</td>
                         <td className="py-2 md:py-3 px-3 md:px-6">{customer.name}</td>
                         <td className="py-2 md:py-3 px-3 md:px-6">{customer.phoneNo}</td>
                         <td className="py-2 md:py-3 px-3 md:px-6">{customer.address}</td>
